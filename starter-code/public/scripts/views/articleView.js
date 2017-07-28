@@ -5,6 +5,7 @@ var app = app || {};
   const articleView = {};
 
   // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+//We're compiling the #article-template with handlebars and then we're setting some key value pairs for daysAgo, publishStatus and body. In the days ago, we take the date and subtract the day when it was published and then we use that in publishStatus and then we apply markdown through marked.js to the body.
   const render = function(article) {
     let template = Handlebars.compile($('#article-template').text());
 
@@ -39,7 +40,7 @@ var app = app || {};
   // REVIEW: Combine both filter functions to a single event handler,
   // which simply redirects to a url like: /category/skateboarding or /author/Kevin+Bacon
   articleView.handleFilters = function() {
-    $('#filters').one('change', 'select', function() {
+    $('#filters').one('change', 'select', function() { //by the way, .one??
       let resource = this.id.replace('-filter', '');
       $(this).parent().siblings().find('select').val(''); // Reset the val from the opposing drop down
       page(`/${resource}/${$(this).val().replace(/\W+/g, '+')}`); // Replace any/all whitespace with a +

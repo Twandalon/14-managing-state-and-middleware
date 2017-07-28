@@ -5,6 +5,7 @@ var app = app || {};
   const newArticle = {};
 
   // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+  //This function is showing the tab content and hiding the export field and then when you focus on the #article-json area then it selects it. In the #new-form area, it runs through newArticle.create function - so it dynamically generates the new article we just wrote. Also when we submit the form, it captures the information we put in the form, runs it through the constructor function and pushes that instance onto the window location. 
   newArticle.initNewArticlePage = function() {
     $('.tab-content').show();
     $('#export-field').hide();
