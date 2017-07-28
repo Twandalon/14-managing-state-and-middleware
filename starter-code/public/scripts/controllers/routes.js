@@ -13,4 +13,5 @@ page('/author/:authorName', app.articleController.loadByAuthor, app.articleContr
 page('/category/:categoryName', app.articleController.loadByCategory, app.articleController.index);
 
 // COMMENT: What is this function doing?
+// We are setting up the functionality of our addresses to run the particular controller which will then load the view of the content when we navigate to that address.
 page();

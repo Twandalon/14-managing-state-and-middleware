@@ -6,6 +6,9 @@ var app = app || {};
 
   // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
   // (put your response in a comment here)
+
+  // Here we are setting context to each article that renders to the dom that is
+  // being run through the app.articleView.index function.
   articleController.index = (ctx) => app.articleView.index(ctx.articles);
 
   // REVIEW: Middleware for grabbing one article by ID:
@@ -17,6 +20,8 @@ var app = app || {};
 
     // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
     // (put your response in a comment here)
+    // In this function we are iterating over each article and setting it's context parameter
+    // to the article id.
     app.Article.findWhere('article_id', ctx.params.article_id, articleData);
   };
 
